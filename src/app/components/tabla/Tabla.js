@@ -2,7 +2,7 @@ import React from 'react'
 
 function Tabla() {
 return (
-<table class="table table-striped bg-white p-4">
+<table className="table table-striped bg-white p-4">
     <thead>
         <tr>
             <th scope="col">#</th>
