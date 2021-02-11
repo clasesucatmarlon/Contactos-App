@@ -4,7 +4,7 @@ import './tabla.css'
 
 function Tabla( { contacts } ) {
 return (
-<table className="table table-striped bg-white p-4">
+<table className="table table-responsive table-striped bg-white p-4">
     <thead>
         <tr>
             <th className="headTable">#</th>

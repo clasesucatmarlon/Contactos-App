@@ -9,7 +9,7 @@ function Body() {
   const [contacts, setContacts] = useState(initialContacts)
 
   return (
-    <div className="container bg-dark p-5">
+    <div className="container bg-dark p-5 mb-5">
       <div className="row justify-content-center">
         <div className="col-12 col-lg-5 pb-5">
           <Formulario setContacts={ setContacts }/>
