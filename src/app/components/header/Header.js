@@ -1,12 +1,12 @@
 import React from "react";
 
-import Logo from "../../../images/logoMarlonGarcia_01.png";
+import Logo from "../../../images/logoMarlonGarcia_02.png";
 
 import './header.css';
 
 function Header() {
 return (
-<div className="container mt-3">
+<div className="container-fluid mt-3 border">
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
             <a className="navbar-brand" href="#">
