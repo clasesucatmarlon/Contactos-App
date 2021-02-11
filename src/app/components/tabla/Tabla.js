@@ -1,19 +1,41 @@
 import React from 'react'
 
-function Tabla() {
+import './tabla.css'
+
+function Tabla( { contacts } ) {
 return (
 <table className="table table-striped bg-white p-4">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Email</th>
+            <th className="headTable">#</th>
+            <th className="headTable cellTable">Nombre</th>
+            <th className="headTable cellTable">Apellido</th>
+            <th className="headTable cellTable">Email</th>
             <th scope="col">Acción</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+
+        {
+            contacts?.map( (contact, index) => (
+                <tr>
+                    <td >{ index + 1 }</td>
+                    <td className="cellTable">{ contact.name }</td>
+                    <td className="cellTable">{ contact.last }</td>
+                    <td className="cellTable">{ contact.email }</td>
+                    <td>
+                        <button type="button" className="btn btn-primary">
+                            <i className="bi bi-pencil"></i>
+                        </button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button type="button" className="btn btn-danger">
+                            <i className="bi bi-trash"></i>
+                        </button>            
+                    </td>
+                </tr>
+            ))
+        }
+{/*         <tr>
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
@@ -56,7 +78,7 @@ return (
                     <i className="bi bi-trash"></i>
                 </button>
             </td>
-        </tr>
+        </tr> */}
 
         
 

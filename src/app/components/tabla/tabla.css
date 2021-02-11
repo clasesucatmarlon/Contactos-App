@@ -1,0 +1,10 @@
+.cellTable {
+    text-align: left;
+    font-size: .9rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.headTable {
+    font-size: .9rem;
+}
