@@ -2,7 +2,7 @@ import React from 'react'
 
 import './tabla.css'
 
-function Tabla( { contacts } ) {
+function Tabla( { contacts, deleteContact } ) {
 return (
 <table className="table table-responsive table-striped bg-white p-4">
     <thead>
@@ -18,7 +18,7 @@ return (
 
         {
             contacts?.map( (contact, index) => (
-                <tr>
+                <tr key={index}>
                     <td >{ index + 1 }</td>
                     <td className="cellTable">{ contact.name }</td>
                     <td className="cellTable">{ contact.last }</td>
@@ -28,59 +28,13 @@ return (
                             <i className="bi bi-pencil"></i>
                         </button>
                         &nbsp;&nbsp;&nbsp;
-                        <button type="button" className="btn btn-danger">
+                        <button onClick={ () => deleteContact(contact.id) } type="button" className="btn btn-danger">
                             <i className="bi bi-trash"></i>
                         </button>            
                     </td>
                 </tr>
             ))
         }
-{/*         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mark@mdo</td>
-            <td>
-                <button type="button" className="btn btn-primary">
-                    <i className="bi bi-pencil"></i>
-                </button>
-                &nbsp;&nbsp;&nbsp;
-                <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                </button>            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>jacob@fat</td>
-            <td>
-                <button type="button" className="btn btn-primary">
-                    <i className="bi bi-pencil"></i>
-                </button>
-                &nbsp;&nbsp;&nbsp;
-                <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                </button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Marlon</td>
-            <td>García</td>
-            <td>marlon@fat</td>
-            <td>
-                <button type="button" className="btn btn-primary">
-                    <i className="bi bi-pencil"></i>
-                </button>
-                &nbsp;&nbsp;&nbsp;
-                <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                </button>
-            </td>
-        </tr> */}
-
-        
 
     </tbody>
 </table>

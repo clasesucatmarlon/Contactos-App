@@ -8,6 +8,15 @@ function Body() {
 
   const [contacts, setContacts] = useState(initialContacts)
 
+  const deleteContact = (id) => {
+    console.log(id)
+    const filterContact = contacts.filter(cont  => cont.id !== id)
+    setContacts(filterContact);
+    localStorage.setItem("contacts", JSON.stringify(filterContact));
+
+  
+  }
+
   return (
     <div className="container bg-dark p-5 mb-5">
       <div className="row justify-content-center">
@@ -16,7 +25,7 @@ function Body() {
         </div>
         <div className="col-12 col-lg-12">
           <h1 className="text-white mb-4">Contactos registrados</h1>
-          <Tabla contacts={ contacts }/>
+          <Tabla contacts={ contacts } deleteContact={ deleteContact }/>
         </div>
       </div>
     </div>
